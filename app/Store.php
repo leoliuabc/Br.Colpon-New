@@ -23,7 +23,7 @@ class Store extends Model
     public static function top_stores()
     {
         $top_stores = DB::table('stores')
-            ->whereIn('id',[41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52])
+            ->limit(11)
             ->get();
         return $top_stores;
     }
