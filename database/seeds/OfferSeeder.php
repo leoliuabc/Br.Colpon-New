@@ -11,7 +11,7 @@ class OfferSeeder extends Seeder
      */
     public function run()
     {
-        DB:table('offers')->delete();
+        DB::table('offers')->delete();
 
         for ($i=0; $i < 20; $i++){
             \App\Offer::create([

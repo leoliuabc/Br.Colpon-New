@@ -11,7 +11,7 @@ class StoreSeeder extends Seeder
      */
     public function run()
     {
-        DB::tabele('stores')->delete();
+        DB::table('stores')->delete();
         for ($i=0; $i < 20; $i++){
             $initials = chr(ord('A')+$i);
             \App\Store::create([

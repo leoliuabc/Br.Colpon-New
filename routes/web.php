@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index');
+Route::get('/lojas/{titleslug}/{id}', 'StoreController@index');
+Route::get('/lojas', 'StoreController@map');
+Route::get('/cupons/{store_id}/{id}', 'OfferController@index');
+Route::get('/cupons', 'OfferController@new_offers');
+Route::get('/search', 'SearchController@index');
+Route::get('/sitemap.xml', 'SitemapController@index');
