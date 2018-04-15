@@ -23,7 +23,7 @@ class SearchController extends Controller
         $store = Store::find($store_id);
         $new_offers = Offer::new_offers();
         if (empty($store)) {
-            return view('nofound',['store_name' => $store_name]);
+            return view('404',['store_name' => $store_name]);
         } else {
             return view('store',['top_stores' => $top_stores,'store' => $store,'new_offers' =>$new_offers]);
         }
